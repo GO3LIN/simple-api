@@ -13,7 +13,6 @@ async function getHealth (req, res, next) {
 }
 
 async function saveStudent (req, res, next) {
-  // Throw 400 if studentIf is not alphanum
   secureStudentIdParam(req, res, next)
 
   let student = db.getStudentById(req.params.studentId)
@@ -53,6 +52,7 @@ async function deleteStudentById (req, res, next) {
 }
 
 function secureStudentIdParam (req, res, next) {
+  // Throw 400 if studentId is not alphanum
   if (/[^A-Za-z0-9 ]/.test(req.params.studentId)) return middleware.handleError({ statusCode: 400 }, req, res, next)
 }
 
