@@ -2,7 +2,7 @@
   "name": "challenge-json-db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "node test.js"
   },
@@ -13,6 +13,7 @@
     "cz-conventional-changelog": "^3.2.0",
     "get-port-sync": "^1.0.0",
     "jsonist": "^2.1.0",
+    "nodemon": "^2.0.4",
     "standard": "^12.0.1",
     "tape": "^4.10.2"
   },
