@@ -1,0 +1,8 @@
+{
+	"studentId": "student",
+	"name": "Enrique Douglas",
+	"age": 88,
+	"hobbies": [
+		"dance", "sing", "write"
+	]
+}
