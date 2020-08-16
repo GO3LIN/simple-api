@@ -17,5 +17,3 @@ function handleError (err, req, res, next) {
 function notFound (req, res) {
   res.status(404).json({ error: 'Not Found' })
 }
-
-// Throw 400 if studentIf is not alphanum
