@@ -9,6 +9,8 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
     "get-port-sync": "^1.0.0",
     "jsonist": "^2.1.0",
     "standard": "^12.0.1",
@@ -17,5 +19,10 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
