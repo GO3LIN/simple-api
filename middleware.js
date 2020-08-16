@@ -2,7 +2,8 @@ const { STATUS_CODES } = require('http')
 
 module.exports = {
   notFound,
-  handleError
+  handleError,
+  secureStudentIdParam
 }
 
 function handleError (err, req, res, next) {
@@ -17,3 +18,10 @@ function handleError (err, req, res, next) {
 function notFound (req, res) {
   res.status(404).json({ error: 'Not Found' })
 }
+
+function secureStudentIdParam (req, res, next) {
+  if (req.params.studentId && /[^A-Za-z0-9 ]/.test(req.params.studentId)) return middleware.handleError({ statusCode: 400 }, req, res, next)
+  next()
+}
+
+// Throw 400 if studentIf is not alphanum

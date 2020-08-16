@@ -2,12 +2,13 @@ const fs = require('fs')
 
 module.exports = {
   getStudentById,
-  saveStudentById
+  saveStudentById,
+  isStudentExists
 }
 
 function getStudentById (studentId) {
   const studentPath = getStudentPathById(studentId)
-  if (!fs.existsSync(studentPath)) {
+  if (!isStudentExists(studentId)) {
   	const student = { studentId: studentId }
   	fs.writeFile(studentPath, JSON.stringify(student), (err) => {
   		if (err) throw err
@@ -24,6 +25,11 @@ function saveStudentById (studentId, student) {
   	if (err) throw err
   })
   return true
+}
+
+function isStudentExists (studentId) {
+  const studentPath = getStudentPathById(studentId)
+  return fs.existsSync(studentPath)
 }
 
 const getStudentPathById = (studentId) => `./data/${studentId}.json`
