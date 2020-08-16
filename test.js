@@ -35,6 +35,15 @@ tape('get student', async function (t) {
   })
 })
 
+tape('delete student', async function (t) {
+  const url = `${endpoint}/studentid123/property1/property2/property3/property4`
+  jsonist.delete(url, (err, body) => {
+    if (err) t.error(err)
+	  	t.ok(body.success, 'should have successful student retrieve')
+	  	t.end()
+  })
+})
+
 tape('cleanup', function (t) {
   server.close()
   t.end()
