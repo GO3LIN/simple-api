@@ -34,7 +34,7 @@ async function getStudentById (req, res, next) {
   let student = require(`./data/${req.params.studentId}.json`)
   const paramsArray = req.params[0].split('/')
   for (let i = 0; i < paramsArray.length; i++) {
-  	student = student[paramsArray[i]] ?? {}
+  	student = student[paramsArray[i]] ? student[paramsArray[i]] : {}
   }
 
   res.json({ success: true, response: student })
